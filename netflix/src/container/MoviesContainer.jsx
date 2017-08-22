@@ -6,9 +6,14 @@ class MoviesContainer extends React.Component {
   constructor(props){
     super(props);
     this.state= {
-      movies: [],
       focusMovie: null
     };
+  }
+
+  setMovies(movies){
+      this.setState({
+          movies: movies
+      });
   }
 
   setFocusMovie(movie){
@@ -17,13 +22,12 @@ class MoviesContainer extends React.Component {
     });
   }
 
-
   render(){
     return(
       <div>
         <h2>List of movies</h2>
-        <MovieSelector movies={this.state.movies} selectMovie={this.setFocusMovie.bind(this)} />
-        <MovieDetail movie={this.state.focusMovie} />
+        <MovieSelector movies={this.props.movies} selectMovie={this.setFocusMovie.bind(this)} />
+        <MovieDetail movie={this.state.focusMovie}/>
       </div>
       );
   }

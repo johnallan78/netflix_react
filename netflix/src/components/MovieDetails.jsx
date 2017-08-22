@@ -8,8 +8,8 @@ class MovieDetail extends React.Component{
     return(
       <div>
         <h2>{this.props.movie.show_title}</h2>
-        <h3>{this.props.movie.release_year}</h3>
-        <h3>{this.props.movie.category}</h3>
+        <p>Release Year: {this.props.movie.release_year}</p>
+        <p>Category: {this.props.movie.category}</p>
         <img src={this.props.movie.poster} alt={this.props.movie.show_title} />
       </div> 
       )
